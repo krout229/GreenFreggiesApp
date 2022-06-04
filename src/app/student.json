@@ -1,0 +1,47 @@
+[{
+        "Id": 1,
+        "Name": "Ladly  Rout",
+        "College": "Techno International New Town College",
+        "Email": "ladly.rout2000@gmail.com"
+
+    },
+    {
+        "Id": 2,
+        "Name": "Soumyadip Mukherjee",
+        "College": "Techno International New Town College",
+        "Email": "soumyadip1998mukherjee@gmail.com"
+
+    },
+
+    {
+        "Id": 3,
+        "Name": "Dnyanada Dhore",
+        "College": "D.Y.Patil College of Engineering",
+        "Email": "dnyanada.dhore@gmail.com"
+
+    },
+    {
+        "Id": 4,
+        "Name": "Rutuja Vetal",
+        "College": "D.Y.Patil College of Engineering",
+        "Email": "rutujavetal@gmail.com"
+
+    },
+
+    {
+        "Id": 5,
+        "Name": "Suyash Pulate",
+        "College": "D.Y.Patil College of Engineering",
+        "Email": "suyashpulate@gmail.com"
+
+    },
+    {
+        "Id": 6,
+        "Name": "Saurabh Gogoi",
+        "College": "D.Y.Patil College of Engineering",
+        "Email": "saurabh26052000@gmail.com"
+
+    }
+
+
+]

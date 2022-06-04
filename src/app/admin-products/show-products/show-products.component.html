@@ -1,0 +1,49 @@
+
+ <button
+ style="margin: 50px; padding: 10px" type="button" class="btn btn-primary" (click)="openPopup()">Add Employee</button>
+<div
+ class="modal" 
+ tabindex="-1"
+ role="dialog"
+ [ngStyle]="{'display':displayStyle}">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h4 class="modal-title"><b>{{ModalTitle}}</b></h4>
+     </div>
+     <div class="modal-body">
+       <app-add-products></app-add-products>
+ 
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-primary" >Save changes</button>
+       <button type="button" class="btn btn-danger" 
+               (click)="closePopup()">
+         Close
+       </button>
+     </div>
+   </div>
+ </div>
+</div>
+<h1>Product</h1>
+
+<table class="table table-striped" aria-labelledby="tabelLabel" *ngIf="products">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let products of products">
+    <td>{{products.VegetableID}}</td>
+    <td>{{products.VegetableName}}</td>
+    <td>{{products.VegetablePrice}}</td>
+    <td><img src="{{products.VegetableImage}}" style="width: 100px;height:100px;"/></td>
+    <td><button >Edit</button><button (click)="deleteClick(products)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
