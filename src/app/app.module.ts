@@ -22,6 +22,17 @@ import {MatIconModule} from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component'
 import { SharedService } from './Services/shared.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { ShowProductsComponent } from './admin-products/show-products/show-products.component';
+import { AddEditProductsComponent } from './admin-products/add-products/add-edit-products.component';
+import { EditProductsComponent } from './admin-products/edit-products/edit-products.component';
+import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
+import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
+import { AdminNavbarComponent } from './admin-landing-page/admin-navbar/admin-navbar.component';
+import { UserNavbarComponent } from './user-landing-page/user-navbar/user-navbar.component';
+import { TeamComponent } from './team/team.component';
+import { AllfeedbacksComponent } from './allfeedbacks/allfeedbacks.component';
+import { TermsComponent } from './terms/terms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +49,19 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorComponent,
     TransactionComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AdminProductsComponent,
+    AddEditProductsComponent,
+    ShowProductsComponent,
+    EditProductsComponent,
+    AdminLandingPageComponent,
+    UserLandingPageComponent,
+    AdminNavbarComponent,
+    UserNavbarComponent,
+    TeamComponent,
+    AllfeedbacksComponent,
+    TermsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -56,6 +79,13 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'log-out', component: LogOutComponent},
       {path: 'feedback', component: FeedbackComponent},
       {path: 'transaction', component: TransactionComponent},
+      {path:'admin-products', component:AdminProductsComponent},
+      {path:'edit-products',component:EditProductsComponent},
+      {path: 'login/user', component:UserLandingPageComponent},
+      {path: 'login/admin', component:AdminLandingPageComponent},
+      {path:'team',component:TeamComponent},
+      {path:'terms', component: TermsComponent},
+      {path:'allfeedbacks',component:AllfeedbacksComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', component:ErrorComponent,pathMatch:'full'},
     ]),

@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { SharedService } from '../Services/shared.service';
 import { feedback } from '../Models/feedback.model';
 import { HttpClient } from '@angular/common/http';
+import { FooterService } from '../Services/footer.service';
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
@@ -12,24 +13,26 @@ import { HttpClient } from '@angular/common/http';
 export class FeedbackComponent implements OnInit {
   Feedbackform = new FormGroup({
     
-    username : new FormControl('', ),
-    feedback:new FormControl('',)
+    Username : new FormControl('',),
+    Feedback:new FormControl('',)
     
   });
   submitted=false;
-  
+  public feedbacks:feedback[];
   get username() {
-    return this.Feedbackform.get('username');
+    return this.Feedbackform.get('Username');
   }
   get feedback() {
-    return this.Feedbackform.get('feedback');
+    return this.Feedbackform.get('Feedback');
   }
   
-  constructor(public nav: NavbarServiceService,private shared:SharedService) { }
+  constructor(public nav: NavbarServiceService,private shared:SharedService,public fs: FooterService) { }
 
   ngOnInit(): void {
     this.nav.show()
     this.nav.doSomethingElseUseful()
+    this.fs.show()
+    this.fs.doSomethingElseUseful()
   }
 
   onSubmit() {
@@ -41,6 +44,9 @@ export class FeedbackComponent implements OnInit {
     
   this.shared.addFeedDetails(this.Feedbackform.value).subscribe((result)=>{
    
-});  
+});
+  location.reload();
 }
+
+
 }

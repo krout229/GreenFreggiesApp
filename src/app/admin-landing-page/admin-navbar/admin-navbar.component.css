@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .navbar{
     margin-top: 0.5px;
+    margin-left:  -115px;
     
 }
-a{
+a,p{
     margin-top: 10px;
     color: white;
     text-decoration: none;
@@ -14,6 +15,9 @@ a{
 }
 a:hover{
     color: beige;
+}
+.navbar-expand{
+    width: 1347px;
 }
 span{
     color:green;

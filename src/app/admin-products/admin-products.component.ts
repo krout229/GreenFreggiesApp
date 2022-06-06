@@ -9,10 +9,10 @@ import { FooterService } from '../Services/footer.service';
 })
 export class AdminProductsComponent implements OnInit {
 
-  constructor(public nav:NavbarServiceService,public fs:FooterService) { }
+  constructor(public nav: NavbarServiceService,public fs:FooterService) { }
 
   ngOnInit(): void {
-    this.nav.show();
+    this.nav.hide();
     this.fs.show();
   }
 

@@ -1,5 +1,5 @@
 export interface feedback{
     
-    username:string;
-    feedback :string;
+    Username:string;
+    Feedback :string;
 }

@@ -1,0 +1,27 @@
+<app-admin-navbar></app-admin-navbar>
+<form >
+    <div class="form-group row" [formGroup]="VegetableForm">
+        
+        <div class="col-md-6">
+        <label class="col-sm-2 col-form-label mb-3"> Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="VegetableName"
+                placeholder="Enter Vegetable Name">
+            </div>
+            <label class="col-sm-2 col-form-label mb-3"> Price</label>
+            <div class="col-sm-10"> 
+                <input type="text" class="form-control" formControlName="VegetablePrice"
+                placeholder="Enter Vegetable Price">
+            </div>
+            <label class="col-sm-2 col-form-label mb-3"> Image</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="VegetableImage"
+                placeholder="Enter Vegetable Image">
+            </div>
+            
+        </div>
+    </div>
+    </form>
+    <button (click)="addVegetable()" class="btn btn-primary" style="background-color:rgb(0, 90, 0);">Add Vegetable</button>
+        
+  

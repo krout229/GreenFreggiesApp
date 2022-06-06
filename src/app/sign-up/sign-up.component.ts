@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarServiceService } from '../navbar-service.service';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
-
+import { SharedService } from '../Services/shared.service';
 import { UserDetails } from '../Models/sign-up.model';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { SuccessComponent } from '../success/success.component';
-import { SharedService } from '../Services/shared.service';
 @Component({
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit  {
-  //public userService:UserDetails;
-//readonly APIUrl ="https://localhost:44307/api"
-  SignUpform = new FormGroup({
+    SignUpform = new FormGroup({
     username : new FormControl('', Validators.required),
-    emailid : new FormControl('',Validators.required),
+    emailid : new FormControl('',[Validators.required , Validators.email]),
     address : new FormControl('',Validators.required),
-    mobilenumber : new FormControl('' , Validators.required),
+    mobilenumber : new FormControl('' , [Validators.required , Validators.minLength(10) , Validators.maxLength(10)]),
     password : new FormControl('',Validators.required)
     
   });
@@ -41,7 +37,7 @@ export class SignUpComponent implements OnInit  {
   }
 
 
-  constructor(public nav: NavbarServiceService,private shared:SharedService,private router:Router) { }
+  constructor(public nav: NavbarServiceService,private shared:SharedService, private router:Router) { }
 
   ngOnInit(): void {
     this.nav.show()
@@ -54,9 +50,11 @@ export class SignUpComponent implements OnInit  {
       return;
   }
   this.shared.addUserDetails(this.SignUpform.value).subscribe((result)=>{
-   
+  
 });
+alert("Sign Up Successful");
+  this.SignUpform.reset();
+  this.router.navigate(['login']);
 }
   
 }
-
