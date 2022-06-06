@@ -1,1 +1,30 @@
-<h1>This is Order</h1>
+<br>
+<br><br>
+<h1 class="fa fa-underline" aria-hidden="true"> Order</h1>
+<div class="container table-responsive py-5">
+
+    <table class="table table-striped" aria-labelledby="tablelabel" *ngIf="cart">
+        <thead class="thead-dark">
+            <th scope="col">VegetableId</th>
+            <th scope="col">Item</th>
+            <th scope="col">ItemPrice</th>
+           
+           
+            
+            <th scope="col">Total</th>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let ct of cart">
+                <td>{{ct.VegetableId}}</td>
+                <td>{{ct.VegetableName}}</td>
+                <td>{{ct.VegetablePrice}}</td>
+                
+                
+                <td>{{(ct.VegetablePrice)}}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+</div>

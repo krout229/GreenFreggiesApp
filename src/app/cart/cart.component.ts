@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Cart from '../Models/cart.model';
 import { NavbarServiceService } from '../navbar-service.service';
 import { FooterService } from '../Services/footer.service';
@@ -11,7 +12,7 @@ import { SharedService } from '../Services/shared.service';
 })
 export class CartComponent implements OnInit {
   public cart:Cart[];
-  constructor(public nav: NavbarServiceService,public fs: FooterService,private shared:SharedService ,public http :HttpClient) { }
+  constructor(public nav: NavbarServiceService,public fs: FooterService,private shared:SharedService ,public http :HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.nav.show();
@@ -34,5 +35,12 @@ export class CartComponent implements OnInit {
       });
       location.reload();
     }
+}
+addOrder(){
+  this.shared.addOrderDetails(this.cart).subscribe(res=>{
+
+  });
+  alert('Order successful!');
+  this.router.navigate(['order']);
 }
 }

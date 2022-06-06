@@ -5,6 +5,7 @@ import { UserDetails } from '../Models/sign-up.model';
 import { Product } from '../Models/product.model';
 import {feedback } from '../Models/feedback.model';
 import cart from '../Models/cart.model';
+import order from '../Models/order.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,7 @@ export class SharedService {
   public userService:UserDetails;
   public products:Product[];
   public cart:cart[];
+  public order:order[];
 readonly APIUrl ="https://localhost:44307/api"
   constructor(private http:HttpClient) { }
 
@@ -48,10 +50,10 @@ addUserDetails(val:any){
 getAllUserDetails():Observable<any[]>{
 return this.http.get<any[]>(this.APIUrl+'/UserDetails/GetAllUserDetails()')
 }
-/*GetAllOrderDetails():Observable<order[]>
+GetAllOrderDetails():Observable<order[]>
 {
   return this.http.get<order[]>(this.APIUrl+'/OrderDetails/GetAllOrderDetails()')
-}*/
+}
 GetAllFeedDetails():Observable<feedback[]>
 {
  return this.http.get<feedback[]>(this.APIUrl+'/Feedback/GetAllFeedDetails()')
@@ -64,6 +66,10 @@ addFeedDetails(val:any){
 }
 DeleteFromCart(id:number)
 { return this.http.delete<cart[]>(this.APIUrl+'/Cart/DeleteCart?CartId='+id)
+}
+addOrderDetails(val:any){
+  console.log(val);
+  return this.http.post<order[]>(this.APIUrl+'/OrderDetails/SaveOrderDetails',val)
 }
 }
 
